@@ -7,7 +7,7 @@ int main(void) {
   std::cin >> num1 >> num2;
 
   int prod = num1 * num2, last_digit = prod % 10;
-  bool is_odd = last_digit % 2 == 1;
+  bool is_odd = last_digit % 2;
 
   std::cout << "Product: " << prod << std::endl;
   std::cout << "Last digit: " << last_digit << std::endl;
