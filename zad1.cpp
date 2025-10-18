@@ -4,11 +4,11 @@
 
 int main()
 {
-    unsigned int num1, num2;
-    std::cout << "Enter 2 numbers: ";
-    std::cin >> num1;
-    std::cin >> num2;
+    int x, a, b;
+    std::cout << "Enter three numbers x, a, b: ";
+    std::cin >> x >> a >> b;
 
-        std::cout << std::boolalpha << (num1 % num2 == 0);
+    bool inInterval = (a <= x && x <= b);
+    std::cout << std::boolalpha << inInterval << std::endl;
+}
 
-}   

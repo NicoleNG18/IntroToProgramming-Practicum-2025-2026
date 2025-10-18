@@ -4,12 +4,12 @@
 
 int main()
 {
-    int num, lastDigit;
-    std::cout << "Enter a natural number: ";
-    std::cin >> num;
+    unsigned int year;
+    std::cout << "Enter year: ";
+    std::cin >> year;
 
-        lastDigit = (num > 9) * (num % 10) + (num <= 9) * num;
-
-        std::cout << lastDigit << std::endl;
-
+    if ((year % 4 == 0 && year % 100 != 0)|| year % 400 == 0)
+        std::cout << "Yes" << std::endl;
+    else
+        std::cout << "No" << std::endl;
 }

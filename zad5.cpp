@@ -4,17 +4,19 @@
 
 int main()
 {
-    int time, days, hours, mins, secs;
-    std::cout << "Enter time in seconds: ";
-    std::cin >> time;
-    secs = time % 60;  
-    mins = (time % 3600) / 60; 
-    hours = (time % (24 * 3600)) / 3600; 
-    days = time / (24 * 3600);
+    int x, y;
+    std::cout << "Enter coordinates of pt.A: ";
+    std::cin >> x >> y;
+    
+    if (x == 0 || y == 0)
+        std::cout << "On axis" << std::endl;
+    else if (x > 0 && y > 0)
+        std::cout << "First" << std::endl;
+    else if (x < 0 && y > 0)
+        std::cout << "Second" << std::endl;
+    else if (x < 0 && y < 0)
+        std::cout << "Third" << std::endl; 
+    else if (x > 0 && y < 0)
+        std::cout << "Forth" << std::endl;
 
-    std::cout << days << " days, " 
-              << hours << " hours, " 
-              << mins << " minutes, " 
-              << secs << " seconds" 
-              << std::endl;
-} 
+}

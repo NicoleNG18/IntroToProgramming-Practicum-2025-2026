@@ -4,22 +4,12 @@
 
 int main()
 {
-    double a, b, c, d;
-    std::cout << "Enter two intervals [a; b]: ";
-    std::cin >> a;
-    std::cin >> b;
-    std::cin >> c;
-    std::cin >> d;
+    unsigned int a, b, c;
+    std::cout << "Enter three sides of triangle a, b, c: ";
+    std::cin >> a >> b >> c;
 
-    std::cout << std::boolalpha << (a <= d && c <= b) << std::endl;
-    
-//Bez if nqmame proverka, che intervalite sa validni
-/*
-    if
-        (a > b || c > d)
-    std::cout << "Make sure a < b & c < d." << std::endl;
-
+    if (a + b > c && a + c > b && b + c > a)
+        std::cout << "Yes" << std::endl;
     else
-    std::cout << std::boolalpha << (a <= d && c <= b) << std::endl;
-*/
+        std::cout << "No" << std::endl;
 }
