@@ -9,5 +9,5 @@ int main() {
     cin >> a >> b >> c >> d;
 
 
-    cout << boolalpha << (b > c) << endl;
+    cout << boolalpha << (b >= c && a <= d) << endl;
 }
