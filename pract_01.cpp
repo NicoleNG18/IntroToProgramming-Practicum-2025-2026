@@ -6,10 +6,10 @@
 //    std::cout << "Hello World!\n";
 //}
 
-//task 0.1
+//task 0.1 reworked
 //int main() 
 //{
-//	int apple, pear, banana;
+//	unsigned int apple, pear, banana;
 //	std::cin >> apple >> pear >> banana;
 //	std::cout << "Don't forget to buy " << apple << " apples, " << peach << " pears and " << banana << " bananas." << std::endl;
 //}
@@ -17,9 +17,9 @@
 //task 1
 //int main() 
 //{
-//	int a, b;
+//	double a, b;
 //	std::cin >> a >> b;
-//	std::cout << "Perimeter = " << 2 * a + 2 * b << std::endl;
+//	std::cout << "Perimeter = " << 2 * (a + b) << std::endl;
 //	std::cout << "Area = " << a * b << std::endl;
 //}
 
@@ -32,13 +32,18 @@
 //	std::cout << "yen = " << euro * 145 << std::endl;
 //}
 
-//task 3
+//task 3 reworked
 //int main() 
 //{
-//	int a, b;
-//	std::cin >> a >> b;
-//	std::cout << "first = " << b << std::endl;
-//	std::cout << "second = " << a << std::endl;
+//	int first, second;
+//	std::cin >> first >> second;
+//
+//	int temp = first;
+//	first = second;
+//	second = temp;
+//
+//	std::cout << "first = " << first << std::endl;
+//	std::cout << "second = " << second << std::endl;
 //}
 
 //task 4

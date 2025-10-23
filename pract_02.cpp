@@ -20,13 +20,13 @@
 //	std::cout << b << std::endl;
 //}
 
-//task03
+//task03 reworked
 //int main()
 //{
 //	int a, b, c ,d;
 //	std::cin >> a >> b >> c >> d;
 //
-//	bool p = !(b < c) || (d < a);
+//	bool p = !(b < c || d < a);
 //	std::cout << std::boolalpha << p << std::endl;
 //}
 
@@ -44,31 +44,36 @@
 //	std::cout << std::boolalpha << p << std::endl;
 //}
 
-//task05
+//task05 reworked
 //int main()
 //{
-//	int seconds;
-//	std::cin >> seconds;
-//	
-//	int days = seconds / 86400;
-//	seconds %= 86400;
+//    const int SECONDS_IN_MINUTE = 60;
+//    const int SECONDS_IN_HOUR = 3600;
+//    const int SECONDS_IN_DAY = 86400;
 //
-//	int hours = seconds / 3600;
-//	seconds %= 3600;
+//    int seconds;
+//    std::cin >> seconds;
 //
-//	int minutes = seconds / 60;
-//	seconds %= 60;
+//    int days = seconds / SECONDS_IN_DAY;
+//    seconds %= SECONDS_IN_DAY;
 //
-//	std::cout << days << " days, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds" << std::endl;
+//    int hours = seconds / SECONDS_IN_HOUR;
+//    seconds %= SECONDS_IN_HOUR;
+//
+//    int minutes = seconds / SECONDS_IN_MINUTE;
+//    seconds %= SECONDS_IN_MINUTE;
+//
+//    std::cout << days << " days, " << hours << " hours, "
+//        << minutes << " minutes, " << seconds << " seconds" << std::endl;
 //}
 
-//task06
+//task06 reworked
 //int main()
 //{
 //	int a, b, c;
 //	std::cin >> a >> b >> c;
-//
-//	std::cout << a << b << c;
+//	int newNum = a * 100 + b * 10 + c;
+//	std::cout << newNum << std::endl;
 //}
 
 //task07
@@ -79,6 +84,17 @@
 //	std::cin >> x;
 //	int absolute = sqrt(x * x);
 //	std::cout << absolute << std::endl;
+//}
+
+//task07 reworked
+//int main()
+//{
+//	int n;
+//	std::cin >> n;
+//
+//	n = (n < 0) * (-n) + (n >= 0) * n;
+//
+//	std::cout << n;
 //}
 
 //task08
