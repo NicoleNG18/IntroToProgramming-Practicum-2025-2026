@@ -1,16 +1,25 @@
-#include <iomanip>
 #include <iostream>
 using namespace std;
-
 int main() {
-    unsigned km;
-    cin >> km;
-    bool isBiggerThan5  = (km>5);
-    float finalTax = (km*2.5) - (isBiggerThan5*(km-5)*1.0);
+    int a, b;
+    cin >> a >> b;
 
-    bool isMoreThan20 = (finalTax > 20.0);
-    float totalTax  = finalTax * 0.10 * isMoreThan20 + finalTax + 3.0;
+    int new_num = a*100 + b;
 
-    cout << totalTax;
+    int d1 = new_num/1000;
+    int d2 = (new_num%1000)/100;
+    int d3 = (new_num%100)/10;
+    int d4 = new_num%10;
+
+    bool is_increasing = (d2 > d1) && (d3 > d2) && (d4 > d3);
+
+    cout<<new_num<<" - ";
+    if (is_increasing) {
+        cout<<"YES"<<endl;
+    }
+    else {
+        cout<<"NO"<<endl;
+    }
+    return 0;
 
 }

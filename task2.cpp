@@ -2,9 +2,13 @@
 using namespace std;
 
 int main() {
-    unsigned n;
-    cin>>n;
-
-    unsigned last_digit = n%10;
-    cout<<last_digit;
+    //task 2
+    unsigned year;
+    cin >> year;
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        cout << "yes" << endl;
+    }
+    else {
+        cout << "no" << endl;
+    }
 }

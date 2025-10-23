@@ -1,17 +1,9 @@
 #include <iostream>
 using namespace std;
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 int main() {
-    int a, b;
-    cin >> a >> b;
-    cout<<boolalpha<<(a%b==0);
-    }
-
-
-
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.
+    //task 1
+    int x,a,b;
+    cin>>x>>a>>b;
+    cout<<boolalpha<<(a<=x and x<=b);
+}

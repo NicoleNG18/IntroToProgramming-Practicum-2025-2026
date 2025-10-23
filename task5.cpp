@@ -2,24 +2,22 @@
 using namespace std;
 
 int main() {
-    unsigned n;
-    cin >> n;
-
-    unsigned day = n / (24 * 3600);
-    n %= 24 * 3600;
-
-    unsigned hour = n / 3600;
-    n %= 3600;
-
-    unsigned minutes = n / 60 ;
-
-    unsigned seconds = n % 60;
-
-    cout << day << " " << " days,  ";
-    cout << hour << " " << " hours,  ";
-    cout << minutes << " " << " minutes,  ";
-    cout << seconds << " " << " seconds";
-
-    return 0;
+    //task 5
+    int x,y;
+    cin>>x>>y;
+    if (x > 0 and y > 0) {
+        cout<<"First";
+    }
+    else if (x < 0 and y > 0) {
+        cout<<"Second";
+    }
+    else if (x < 0 and y < 0) {
+        cout<<"Third";
+    }
+    else if (x > 0 and y < 0) {
+        cout<<"Forth";
+    }
+    else {
+        cout<<"On axis";
+    }
 }
-
