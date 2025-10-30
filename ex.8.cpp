@@ -6,24 +6,15 @@ int main()
 	int num1, num2;
 	cin >> num1 >> num2;
 
-	if ((num1 < 10 && num1>99) && (num2 < 10 && num2>99))
-	{
-		cout << "Invalid number!" << endl;
-	}
+	int minNum = (num1 < num2) ? num1 : num2;
 
-	int newNumber = num1 * 100 + num2;
-	int firstDigit = newNumber / 1000;
-	int secondDigit = (newNumber / 100) % 10;
-	int thirdDigit = (newNumber / 10) % 10;
-	int forthDigit = newNumber % 10;
-
-	if ((forthDigit > thirdDigit) && (thirdDigit > secondDigit) && (secondDigit > firstDigit))
+	for (int i = minNum; i >= 1; i--)
 	{
-		cout << newNumber << " - YES" << endl;
-	}
-	else
-	{
-		cout << newNumber << " - NO" << endl;
+		if (num1 % i == 0 && num2 % i == 0)
+		{
+			cout << i << " ";
+		}
 	}
 	return 0;
 }
+

@@ -3,21 +3,33 @@ using namespace std;
 
 int main()
 {
-	int a;
-	double x, y;
-	cin >> a >> x >> y;
+	long long number;
+	cin >> number;
 
-	int col = x / a; // squares to the right
-	int row = y / a; // squares up
+	int theMostCommonDigit = 0;
+	int digit = 0;
 
-	if ((col + row) % 2 == 0) // col+row -> how many steps we have taken
+	for (int i = 0; i <= 9; i++)
 	{
-		cout << "black" << endl;
-	}
-	else
-	{
-		cout << "white" << endl;
-	}
+		long long temp = number;
+		int count = 0;
 
-	return 0;
+		while (temp > 0)
+		{
+			if (temp % 10 == i)
+			{
+				count++;
+			}
+			temp /= 10;
+		}
+		if (count > theMostCommonDigit || (count == theMostCommonDigit && i > digit))
+		{
+			theMostCommonDigit = count;
+			digit = i;
+		}
+	}
+	cout << digit;
+
+	return 0; 
+
 }

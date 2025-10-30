@@ -3,26 +3,13 @@ using namespace std;
 
 int main()
 {
-	unsigned int hours, minutes;
-	cin >> hours >> minutes;
+	int number;
+	cin >> number;
 
-	if (minutes < 45)
+	for (int x = 1; x < number; x++)
 	{
-		if (hours >= 24)
-		{
-			hours = 0;
-		}
-		cout << ((hours < 10) ? "0" : "") << hours << ":" << (minutes += 15) << endl;
-	}
-	else if (minutes > 45)
-	{
-		minutes -= 45;
-		hours += 1;
-		if (hours >= 24)
-		{
-			hours = 0;
-		}
-		cout << ((hours < 10) ? "0" : "") << hours << ":" << ((minutes < 10) ? "0" : "") << minutes << endl;
+		int y = number - x;
+		cout << "x = " << x << " y = " << y << endl;
 	}
 	return 0;
 }

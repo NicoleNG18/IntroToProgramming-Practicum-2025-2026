@@ -3,17 +3,18 @@ using namespace std;
 
 int main()
 {
-	unsigned int a, b, c;
-	cin >> a >> b >> c;
+	int num1, num2;
+	cin >> num1 >> num2;
 
+	int temp;
 
-	if ((a + b > c) && (a + c > b) && (b + c > a))
+	while (num2 != 0)
 	{
-		cout << "yes" << endl;
+		temp = num2;
+		num2 = num1 % num2;
+		num1 = temp;
 	}
-	else
-	{
-		cout << "no";
-	}
+	cout << num1;
+
 	return 0;
 }

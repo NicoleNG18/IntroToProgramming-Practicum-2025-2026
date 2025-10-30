@@ -3,16 +3,27 @@ using namespace std;
 
 int main()
 {
-	int x, a, b;
-	cin >> x >> a >> b;
+	int number;
+	cin >> number;
 
-	if (x >= a && x <= b)
+	bool isPrime = true;
+
+	for (int i = 2; i * i <= number; i++)
 	{
-		cout << "true" << endl;
+		if (number % i == 0)
+		{
+			isPrime = false;
+			break;
+		}
+	}
+	
+	if (isPrime)
+	{
+		cout << "prime";
 	}
 	else
 	{
-		cout << "false" << endl;
+		cout << "not prime";
 	}
 
 	return 0;

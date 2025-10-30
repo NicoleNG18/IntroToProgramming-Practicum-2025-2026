@@ -3,17 +3,31 @@ using namespace std;
 
 int main()
 {
-	unsigned int year;
-	cin >> year;
+	int number, position;
+	cin >> number, position;
 
-	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+	int temp = number;
+	int count = 0;
+
+	while (temp > 0)
 	{
-		cout << "yes" << endl;
+		count++;
+		temp /= 10;
+	}
+
+	if (position > count)
+	{
+		cout << "Don't have digit on index 5";
 	}
 	else
 	{
-		cout << "no";
-	}
+		for (int i = 0; i <= count - position; i++)
+		{
+			number /= 10;
+		}
 
+		int digit = number % 10;
+		cout << digit;
+	}
 	return 0;
 }

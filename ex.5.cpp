@@ -3,32 +3,26 @@ using namespace std;
 
 int main()
 {
-	int x, y;
-	cin >> x >> y;
+	long long binaryNum;
+	cin >> binaryNum;
 
-	if (x == 0 && y == 0)
+	long long reversedNum = 0;
+	while (binaryNum > 0)
 	{
-		cout << "At the origin." << endl;
+		int digit = binaryNum % 10;
+		reversedNum = reversedNum * 10 + digit;
+		binaryNum /= 10;
 	}
-	else if (x == 0 || y == 0)
+
+	long long sum = 0;
+	
+	while(reversedNum>0)
 	{
-		cout << "On axis." << endl;
+		int digit = reversedNum % 10;
+		sum = sum * 2 + digit;
+		reversedNum /= 10;
 	}
-	else if (x > 0 && y > 0)
-	{
-		cout << "First." << endl;
-	}
-	else if (x < 0 && y > 0)
-	{
-		cout << "Second." << endl;
-	}
-	else if (x < 0 && y < 0)
-	{
-		cout << "Third." << endl;
-	}
-	else if (x > 0 && y < 0)
-	{
-		cout << "Forth." << endl;
-	}
+	std::cout << sum;
+	
 	return 0;
 }

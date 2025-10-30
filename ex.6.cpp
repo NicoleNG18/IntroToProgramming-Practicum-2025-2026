@@ -3,42 +3,27 @@ using namespace std;
 
 int main()
 {
-	unsigned int month;
-	cin >> month;
+	int number;
+	cin >> number;
 
-	switch (month)
+	for (int i = 0; i < number; i++)
 	{
-	case 1:
-	case 3:
-	case 5:
-	case 7:
-	case 8:
-	case 10:
-	case 12:
-		cout << "31" << endl;
-		break;
-	case 2:
-		int year;
-		cout << "Year: ";
-		cin >> year;
-
-		if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+		for (int j = 0; j < number; j++)
 		{
-			cout << "29" << endl;
+			if (i == j)
+			{
+				cout << '0';
+			}
+			else if (i < j)
+			{
+				cout << '+';
+			}
+			else
+			{
+				cout << '-';
+			}
 		}
-		else
-		{
-			cout << "28" << endl;
-		}
-		break;
-	case 4:
-	case 6:
-	case 9:
-	case 11:
-		cout << "30" << endl;
-		break;
-	default:
-		break;
+		cout << endl;
 	}
 	return 0;
 }
