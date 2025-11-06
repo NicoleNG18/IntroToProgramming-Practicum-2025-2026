@@ -1,0 +1,8 @@
+# Ignore Visual Studio and build files
+.vs/
+*.user
+*.suo
+*.opendb
+*.VC.db
+Debug/
+Release/
