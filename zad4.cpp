@@ -4,25 +4,19 @@
 
 int main()
 {
-    int input;
-    std::cout << "Enter a number (1-12): ";
-    std::cin >> input;
-    
-    switch (input) {
-        case 1: std::cout << "January"; break;
-        case 2: std::cout << "February"; break;
-        case 3: std::cout << "March"; break;
-        case 4: std::cout << "April"; break;
-        case 5: std::cout << "May"; break;
-        case 6: std::cout << "June"; break;
-        case 7: std::cout << "July"; break;
-        case 8: std::cout << "August"; break;
-        case 9: std::cout << "September"; break;
-        case 10: std::cout << "October"; break;
-        case 11: std::cout << "November"; break;
-        case 12: std::cout << "December"; break;
-        default: std::cout << "Invalid input!";
+    unsigned int num1, num2;
+    std::cout << "Enter 2 numbers to find lcm : ";
+    std::cin >> num1 >> num2;
+    unsigned int a = num1;
+    unsigned int b = num2;
+
+    while (num2 != 0) {
+        unsigned int temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
     }
-        
-    std::cout << std::endl;
+    unsigned int gcd = num1;
+    unsigned long long lcm = ((unsigned long long)a * b) / gcd;
+    std::cout << lcm << std::endl;
+    return 0;
 }

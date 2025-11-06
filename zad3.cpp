@@ -4,12 +4,15 @@
 
 int main()
 {
-    unsigned int a, b, c;
-    std::cout << "Enter three sides of triangle a, b, c: ";
-    std::cin >> a >> b >> c;
+    unsigned int num1, num2;
+    std::cout << "Enter 2 numbers to find gcd : ";
+    std::cin >> num1 >> num2;
 
-    if (a + b > c && a + c > b && b + c > a)
-        std::cout << "Yes" << std::endl;
-    else
-        std::cout << "No" << std::endl;
+    while (num2 != 0) {
+        unsigned int temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
+    }
+        std::cout << num1 << std::endl;
+    return 0;
 }

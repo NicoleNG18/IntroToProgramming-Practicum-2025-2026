@@ -4,11 +4,28 @@
 
 int main()
 {
-    int x, a, b;
-    std::cout << "Enter three numbers x, a, b: ";
-    std::cin >> x >> a >> b;
+    unsigned int n;
+    std::cout << "Enter natural number: ";
+    std::cin >> n;
 
-    bool inInterval = (a <= x && x <= b);
-    std::cout << std::boolalpha << inInterval << std::endl;
+    if (n < 2) {
+        std::cout << "not prime" << std::endl;
+        return 0;
+    }
+
+    bool isPrime = true;
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;           
+        }
+    }
+
+    if (isPrime)
+        std::cout << "prime" << std::endl;
+    else
+        std::cout << "not prime" << std::endl;
+
+    return 0;
 }
-

@@ -4,22 +4,26 @@
 
 int main()
 {
-    unsigned int a, row, col;
-    double x, y;
-    std::cout << "Enter length of side a: ";
-    std::cin >> a;
-    std::cout << "Enter coordinates x and y: ";
-    std::cin >> x >> y;
+    unsigned long long n;
+    std::cout << "Enter natural number : ";
+    std::cin >> n;
+    int count[10] = { 0 };
 
-    col = int(x / a);
-    row = int(y / a);
-
-    if (x < 0 || y < 0) {
-        std::cout << "Point is not in first quadrant." << std::endl;
+    while (n > 0) {
+        int digit = n % 10; 
+        count[digit]++;
+        n /= 10;     
     }
-    else
-        std::cout << ((row + col) % 2 == 0 ? "Black" : "White") << std::endl;
-    //sborut na reda i colonata na chernite kvadratcheta vinagi e chetno chislo
-    //tova vaji samo za purvi i treti kvadrant
 
+    int maxDigit = 0;
+    int maxCount = count[0];
+
+    for (int i = 1; i <= 9; i++) {
+        if (count[i] > maxCount || (count[i] == maxCount && i > maxDigit)) {
+            maxCount = count[i];
+            maxDigit = i;
+        }
+    }
+        std::cout << "Most common: " << maxDigit << std::endl;
+        return 0;
 }
