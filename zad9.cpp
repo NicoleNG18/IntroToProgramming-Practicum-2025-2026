@@ -7,23 +7,26 @@ int main()
     unsigned long long n;
     std::cout << "Enter natural number : ";
     std::cin >> n;
-    int count[10] = { 0 };
-
-    while (n > 0) {
-        int digit = n % 10; 
-        count[digit]++;
-        n /= 10;     
-    }
-
     int maxDigit = 0;
-    int maxCount = count[0];
+    int maxCount = 0;
 
-    for (int i = 1; i <= 9; i++) {
-        if (count[i] > maxCount || (count[i] == maxCount && i > maxDigit)) {
-            maxCount = count[i];
-            maxDigit = i;
+    for (int digit = 0; digit <= 9; digit++) {
+        unsigned long long temp = n;
+        int count = 0;
+
+        while (temp > 0) {
+            int currentDigit = temp % 10;
+            if (currentDigit == digit) {
+                count++;
+            }
+            temp /= 10;
+        }
+    
+        if (count > maxCount || (count == maxCount && digit > maxDigit)) {
+            maxCount = count;
+            maxDigit = digit;
         }
     }
-        std::cout << "Most common: " << maxDigit << std::endl;
-        return 0;
+    std::cout << "Most common: " << maxDigit << std::endl;
+    return 0;
 }
