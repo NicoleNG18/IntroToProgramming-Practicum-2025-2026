@@ -16,9 +16,8 @@ int main() {
         cin >> currentNum;
 
         if (currentNum > max) {
+            secondMax = max;
             max = currentNum;
-        } else if (currentNum > secondMax) {
-            secondMax = currentNum;
         }
     }
 
