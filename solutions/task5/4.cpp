@@ -1,19 +1,12 @@
 #include<iostream>
 
 int digitCount(long long n) { 
-
-  if(n == 0) return 1;
-
   int count = 0;
-  long long input = 0 + n;
 
-  for(int i = 0; i < n; i ++) {
+  do {
     count ++;
-    input /= 10;
-    if(input == 0) {
-      return count;
-    }
-  }
+  }while((input /= 10) > 0);
+
   return count;
 }
 

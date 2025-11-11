@@ -1,38 +1,55 @@
 #include <iostream>
 
+int calcDigitCount(long long digit) {
+  int count = 0;
+
+  do {
+    count ++;
+  }while((digit /= 10) > 0);
+
+  return count;
+}
+
+short calcMaxDigit(long long num) {
+  short maxDigit = 0;
+  while (num > 0) {
+    int d = num % 10;
+    if (d > maxDigit) maxDigit = d;
+    num /= 10;
+  }
+  return maxDigit;
+}
+
+long long removeDigitFromNumber(long long num, short digit) {
+  long long newN = 0, pow10 = 1;
+  bool removed = false;
+  while (num > 0) {
+    int d = num % 10;
+    num /= 10;
+    if (d == digit && !removed) {
+      removed = true;
+      continue;
+    }
+    newN += d * pow10;
+    pow10 *= 10;
+  }
+  return newN;
+}
+
+long long appendDigit(long long n, short digit) {
+  return n * 10 + digit;
+}
+
 long long sortDigits(long long n) {
     long long result = 0;
     long long multiplier = 1;
 
-    long long temp = n, digitCount = 0;
-    while (temp > 0) {
-        temp /= 10;
-        digitCount++;
-    }
+    int digitCount = calcDigitCount(n);
 
     for (int i = 0; i < digitCount; i++) {
-        long long temp = n, maxDigit = -1;
-        while (temp > 0) {
-            int d = temp % 10;
-            if (d > maxDigit) maxDigit = d;
-            temp /= 10;
-        }
-
-        long long newN = 0, pow10 = 1;
-        bool removed = false;
-        while (n > 0) {
-            int d = n % 10;
-            n /= 10;
-            if (d == maxDigit && !removed) {
-                removed = true;
-                continue;
-            }
-            newN += d * pow10;
-            pow10 *= 10;
-        }
-        n = newN;
-
-        result = result * 10 + maxDigit;
+      long long maxDigit = calcMaxDigit(n);
+      n = removeDigitFromNumber(n, maxDigit);
+      result = appendDigit(result, maxDigit);
     }
 
     return result;

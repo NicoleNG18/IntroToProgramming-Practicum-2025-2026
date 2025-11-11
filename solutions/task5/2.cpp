@@ -30,11 +30,11 @@ bool isLower(char c) {
 }
 
 bool isAlpha(char c) { 
-  return isUpper(c) && isLower(c);
+  return isUpper(c) || isLower(c);
 }
 
 bool isAlnum(char c) {
-  return isAlpha(c) && isDigit(c);
+  return isAlpha(c) || isDigit(c);
 }
 
 char capitalize(char c) {
@@ -42,7 +42,7 @@ char capitalize(char c) {
     return c;
   }
 
-  return c + 32;
+  return c - 32;
 }
 
 char makeLower(char c) {
@@ -50,7 +50,7 @@ char makeLower(char c) {
     return c;
   }
 
-  return c - 32;
+  return c + 32;
 }
 
 int parseInt(char c) {
@@ -117,6 +117,9 @@ double myPow(double base, int pow) {
 }
 
 long myCeil(double n) {
+  if(n == long(n)) {
+    return n;
+  }
   return (long)(n+1);
 }
 

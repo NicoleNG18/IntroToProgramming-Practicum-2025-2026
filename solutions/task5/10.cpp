@@ -1,6 +1,6 @@
 #include<iostream>
 
-#define SQRT_ITERATIONS 10
+#define SQRT_ITERATIONS 5
 
 //Newton approximation
 double approximateSqrt(int n) {
