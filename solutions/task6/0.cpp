@@ -1,12 +1,15 @@
 #include<iostream>
 
-
-// bez masivi shte skladirame chislata v callstaka i shte boli
 long long nthFib(int n) {
   
-  if(n == 1 || n == 2) return 1;
+  long long prev = 1, last = 1;
 
-  return nthFib(n - 1) + nthFib(n - 2);
+  for(int i = 2; i < n; i ++) {
+    last = last + prev;
+    prev = last - prev;
+  }
+
+  return last;
 }
 
 int main(void) {
