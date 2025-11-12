@@ -2,20 +2,23 @@
 
 #include <iostream>
 
-int main()
-{
-    unsigned long long bin;
-    std::cout << "Binary to decimal : ";
-    std::cin >> bin;
-    unsigned long long res = 0;
-    unsigned long long base = 1;
+bool onSameCircle(int a, int b, int c, int d) {
+    int rad1_squared = a * a + b * b;
+    int rad2_squared = c * c + d * d;
 
-    while (bin != 0) {
-        unsigned lastDigit = bin % 10;
-        res += lastDigit * base;
-        base *= 2;
-        bin /= 10;
-    }
-    std::cout << res << std::endl;
+    return rad1_squared == rad2_squared;
+}
+
+int main() {
+    int a, b, c, d;
+    std::cout << "Enter coordinates of (a b): ";
+    std::cin >> a >> b;
+    std::cout << "Enter coordinates of (c d): ";
+    std::cin >> c >> d;
+
+    if (onSameCircle(a, b, c, d))
+        std::cout << "yes" << std::endl;
+    else
+        std::cout << "no" << std::endl;
     return 0;
 }

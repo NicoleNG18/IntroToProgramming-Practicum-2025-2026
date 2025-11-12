@@ -2,21 +2,41 @@
 
 #include <iostream>
 
-int main()
-{
-    unsigned int num1, num2;
-    std::cout << "Enter 2 numbers to find lcm : ";
-    std::cin >> num1 >> num2;
-    unsigned int a = num1;
-    unsigned int b = num2;
+int sortDescending(int n) {
+    int result = 0;
 
-    while (num2 != 0) {
-        unsigned int temp = num2;
-        num2 = num1 % num2;
-        num1 = temp;
+    while (n > 0) {
+        int maxDigit = 0;
+        int temp = n;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (digit > maxDigit)
+                maxDigit = digit;
+            temp /= 10;
+        }
+
+        result = result * 10 + maxDigit;
+
+        int newNum = 0;
+        int multiplier = 1;
+        while (n > 0) {
+            int digit = n % 10;
+            n /= 10;
+            if (digit != maxDigit)
+                newNum += digit * multiplier, multiplier *= 10;
+        }
+        n = newNum;
     }
-    unsigned int gcd = num1;
-    unsigned long long lcm = ((unsigned long long)a * b) / gcd;
-    std::cout << lcm << std::endl;
+
+    return result;
+}
+
+int main() {
+    int num;
+    std::cout << "Enter a natural number: ";
+    std::cin >> num;
+    std::cout << sortDescending(num) << std::endl;
+
     return 0;
 }

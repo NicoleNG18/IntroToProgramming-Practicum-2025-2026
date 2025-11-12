@@ -2,18 +2,34 @@
 
 #include <iostream>
 
-int main() {
-    unsigned int num1, num2;
-    std::cout << "Enter two numbers: ";
-    std::cin >> num1 >> num2;
-    unsigned int min = (num1 < num2) ? num1 : num2;
+int mixNum(int a, int b) {
+    int temp = 0;
+    int multiplier = 1;
 
-    for (int i = min; i >= 1; i--) {
-        if (num1 % i == 0 && num2 % i == 0) {
-            std::cout << i << " ";
+    while (a > 0 || b > 0) {
+        if (a > 0) {
+            temp += (a % 10) * multiplier;
+            multiplier *= 10;
+            a /= 10;
+        }
+        if (b > 0) {
+            temp += (b % 10) * multiplier;
+            multiplier *= 10;
+            b /= 10;
         }
     }
-    std::cout << std::endl;
-    return 0;
+
+    int result = 0;
+    while (temp > 0) {
+        result = result * 10 + (temp % 10);
+        temp /= 10;
+    }
+    return result;
 }
 
+int main() {
+    int x, y;
+    std::cin >> x >> y;
+    std::cout << mixNum(x, y) << std::endl;
+    return 0;
+}

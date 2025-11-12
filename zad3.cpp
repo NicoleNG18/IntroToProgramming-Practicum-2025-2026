@@ -2,21 +2,24 @@
 
 #include <iostream>
 
-int main()
-{
-    unsigned int num1, num2;
-    std::cout << "Enter 2 numbers to find gcd : ";
-    std::cin >> num1 >> num2;
-    if (num1 < num2) {
-        unsigned int temp = num1;
-        num1 = num2;
-        num2 = temp;
+int countDigits(int n) {
+    if (n == 0) return 1;
+
+    if (n < 0) n = -n;
+
+    int count = 0;
+    while (n > 0) {
+        n /= 10;
+        count++;
     }
-    while (num2 != 0) {
-        unsigned int temp = num2;
-        num2 = num1 % num2;
-        num1 = temp;
-    }
-    std::cout << num1 << std::endl;
+    return count;
+}
+
+int main() {
+    int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+    std::cout << countDigits(num) << std::endl;
+
     return 0;
 }

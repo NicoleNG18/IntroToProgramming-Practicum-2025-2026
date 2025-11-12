@@ -2,29 +2,28 @@
 
 #include <iostream>
 
-int main()
-{
-    long long num;
-    unsigned int pos;
-    std::cout << "Enter number and position: ";
-    std::cin >> num >> pos;
+int reverseNumber(int n) {
+    int reversed = 0;
+    while (n > 0) {
+        int digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n /= 10;
+    }
+    return reversed;
+}
 
-    int digits = 0;
-    long long temp = num;
-    while (temp > 0) {
-        digits++;
-        temp /= 10;
+int main() {
+    int n;
+    std::cout << "Enter number: ";
+    std::cin >> n;
+
+    if (n < 0) {
+        std::cout << "Number must not be negative!" << std::endl;
+        return 1;
     }
 
-    if (pos < 1 || pos > digits) {
-        std::cout << "Dont have digit on index " << pos << std::endl;
-        return 0;
-    }
+    int reversed = reverseNumber(n);
+    std::cout << reversed << std::endl;
 
-    for (int i = 1; i < pos; i++) {
-        num /= 10;
-    }
-        int res = num % 10;
-        std::cout << res << std::endl;
     return 0;
 }
