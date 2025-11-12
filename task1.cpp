@@ -1,9 +1,16 @@
 #include <iostream>
 using namespace std;
 
+int factorial(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
 int main() {
-    //task 1
-    int x,a,b;
-    cin>>x>>a>>b;
-    cout<<boolalpha<<(a<=x and x<=b);
+    int n;
+    cin >> n;
+    cout << factorial(n) << endl;
 }

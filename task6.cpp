@@ -1,25 +1,35 @@
 #include <iostream>
 using namespace std;
-int main() {
-    //task 6
-    unsigned month;
-    cin >> month;
-    if (month == 1 or month == 3 or month == 5 or month == 7
-        or month == 8 or month == 10 or month ==12) {
-        cout<<"31";
-    }
-    else if (month != 2) {
-        cout<<"30";
-    }
-    else {
-        cout<<'Enter year: ';
-        unsigned year;
-        cin>>year;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            cout<<"29";
+
+void draw(int n) {
+    int totalRows = 2*n-1;
+    int stars;
+    int spaces;
+    for (int i = 1; i <= totalRows; i++) {
+        if (i<=n) {
+            stars = 2*i-1;
+            spaces = n-i;
         }
         else {
-            cout<<"28";
+            stars = 2 * (totalRows - i + 1) - 1;
+            spaces = i-n;
         }
+        for (int j = 0; j < spaces; j++) {
+            cout << " ";
+        }
+
+        for (int j = 0; j < stars; j++) {
+            cout << "*";
+        }
+
+        cout << endl;
     }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    draw(n);
+    return 0;
+
 }
