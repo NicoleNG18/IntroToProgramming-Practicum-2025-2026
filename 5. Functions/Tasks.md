@@ -227,11 +227,11 @@ no
 
 Вход:
 ```
-1000 1050
+1000 1200
 ```
 Изход:
 ```
-1001 1012 1023 1034 1045
+1010 1021 1032 1043 1054 1065 1076 1087 1098 1110 1121 1132 1143 1154 1165 1176 1187 1198
 ```
 
 Вход:
@@ -336,7 +336,7 @@ No such a number!
 ```
 Изход:
 ```
-Is even: true
+Is even: false
 Sum of digits: 6
 Prod of digits: 4
 Is Palindrome: true
@@ -347,9 +347,11 @@ Is Palindrome: true
 ```
 Изход:
 ```
-Is even: false
+Is even: true
 Sum of digits: 10
 Prod of digits: 24
 Is Palindrome: false
 ```
 ---------------------------------------------------------
+
+
