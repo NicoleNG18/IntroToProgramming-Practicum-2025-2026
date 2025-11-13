@@ -2,10 +2,9 @@
 
 #include <iostream>
 
-void decimalToBinary(int n) {
+long long decimalToBinary(int n) {
     if (n == 0) {
-        std::cout << 0;
-        return;
+        return 0;
     }
 
     int power = 1;
@@ -13,22 +12,27 @@ void decimalToBinary(int n) {
         power *= 2;
     }
 
+    long long binary = 0;
+
     while (power > 0) {
+        binary *= 10;
         if (n >= power) {
-            std::cout << 1;
+            binary += 1;
             n -= power;
-        }
-        else {
-            std::cout << 0;
         }
         power /= 2;
     }
+
+    return binary;
 }
 
 int main() {
     int n;
     std::cout << "Decimal to binary: ";
     std::cin >> n;
-    decimalToBinary(n);
+
+    long long binary = decimalToBinary(n);
+    std::cout << binary << std::endl;
+
     return 0;
 }

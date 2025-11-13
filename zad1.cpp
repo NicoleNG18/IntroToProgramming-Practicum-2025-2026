@@ -23,7 +23,7 @@ int parseInt(char c) {
 }
     return -1;
 }
-char toChar(char n) {
+char toChar(int n) {
     if (n >= 0 && n <= 9) {
         return n + '0';
     }

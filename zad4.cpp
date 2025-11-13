@@ -20,11 +20,17 @@ int sortDescending(int n) {
 
         int newNum = 0;
         int multiplier = 1;
+        bool removed = false;
+
         while (n > 0) {
             int digit = n % 10;
             n /= 10;
-            if (digit != maxDigit)
-                newNum += digit * multiplier, multiplier *= 10;
+            if (digit == maxDigit && !removed) {
+                removed = true;
+                continue;
+            }
+            newNum += digit * multiplier;
+            multiplier *= 10;
         }
         n = newNum;
     }
