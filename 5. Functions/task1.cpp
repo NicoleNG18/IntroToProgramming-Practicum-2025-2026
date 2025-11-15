@@ -22,6 +22,7 @@ bool isAlnum(char c) {
     return isAlpha(c) || isDigit(c);
 }
 
+// ako ne castvam - task1.cpp:26:23: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]
 char capitalize(char c) {
     return isLower(c) ? (char)(c - ('a' - 'A')) : c;
 }

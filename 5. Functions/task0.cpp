@@ -2,12 +2,21 @@
 
 using namespace std;
 
-void decimalToBinary(unsigned int decimal) {
+unsigned long long int decimalToBinary(unsigned int decimal) {
     if (decimal > 1) {
         decimalToBinary(decimal / 2);
     }
 
-    cout << (decimal % 2);
+    unsigned long long int binary = 0;
+    unsigned int tenPowI = 1;
+
+    for (unsigned int i = 1; decimal > 0; i++) {
+        binary += (decimal % 2) * tenPowI;
+        decimal /= 2;
+        tenPowI *= 10;
+    }
+
+    return binary;
 }
 
 int main() {
@@ -15,6 +24,5 @@ int main() {
     cout << "Enter a non-negative integer: ";
     cin >> decimal;
 
-    decimalToBinary(decimal);
-    cout << endl;
+    cout << decimalToBinary(decimal) << endl;
 }
