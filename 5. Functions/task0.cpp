@@ -8,7 +8,7 @@ unsigned long long int decimalToBinary(unsigned int decimal) {
     }
 
     unsigned long long int binary = 0;
-    unsigned int tenPowI = 1;
+    unsigned long long int tenPowI = 1;
 
     for (unsigned int i = 1; decimal > 0; i++) {
         binary += (decimal % 2) * tenPowI;
