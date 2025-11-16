@@ -15,7 +15,7 @@ unsigned int mirroredNum(unsigned int num) {
     return mirrored;
 }
 
-int main () {
+int main() {
     cout << mirroredNum(288) << endl;
     cout << mirroredNum(210) << endl;
 }
