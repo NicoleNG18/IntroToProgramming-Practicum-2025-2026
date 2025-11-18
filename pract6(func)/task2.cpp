@@ -1,8 +1,7 @@
 #include <iostream>
-long long result = 0;
-long long reversed = 0;
 long long convertToBinary(unsigned decimalNum)
 {
+    long long result = 0;
     long long base = 1;
 
     while (decimalNum != 0)
@@ -16,6 +15,7 @@ long long convertToBinary(unsigned decimalNum)
 }
 long long reverseNumber(long long resultOfConversion)
 {
+    long long reversed = 0;
     while (resultOfConversion > 0)
     {
         reversed = reversed * 10 + (resultOfConversion % 10);
@@ -25,7 +25,7 @@ long long reverseNumber(long long resultOfConversion)
 }
 bool isPalindrome(long long resultOfConversion)
 {
-    return resultOfConversion == reverseNumber(result);
+    return resultOfConversion == reverseNumber(resultOfConversion);
 }
 void binIsPalindrome ()
 {
@@ -37,7 +37,7 @@ void binIsPalindrome ()
 
         if (isPalindrome(binNum) == true)
         {
-            std::cout<< binNum << " ";
+            std::cout << numToCheck << " ";
             count++;
         }
         numToCheck++;
