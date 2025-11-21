@@ -1,0 +1,16 @@
+// Conditionals2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout <<"Enter year: ";
+
+    unsigned year;
+    std::cin >> year;
+
+    bool isLeap = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+
+    std::cout << "Is leap year: " <<(isLeap ? "Yes" : "No");
+}
