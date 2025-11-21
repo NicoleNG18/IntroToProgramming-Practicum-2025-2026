@@ -1,0 +1,30 @@
+// Loops4.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter 2 numbers: ";
+
+    unsigned num1, num2;
+    std::cin >> num1 >> num2;
+
+    if (num1 < num2)
+    {
+        unsigned a = num1;
+        num1 = num2;
+        num2 = a;
+    }
+
+    while (num2 != 0)
+    {
+        unsigned rem = num1 % num2;
+        num1 = num2;
+        num2 = rem;
+    }
+
+    std::cout << "NOD is: " << num1;
+
+}
+

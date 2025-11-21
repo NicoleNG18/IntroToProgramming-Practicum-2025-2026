@@ -1,0 +1,36 @@
+// Conditionals7.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout <<"Enter hour and minutes: ";
+
+    unsigned hour, min;
+    std::cin >> hour >> min;
+
+    if (min < 45) {
+        min += 15;
+    }
+    else {
+        if (hour == 23) {
+            hour = 0;
+        }
+        else {
+            hour++;
+        }
+
+        min -= 45;
+    }
+
+    if (hour >= 0 && hour <= 9) {
+        std::cout << "0" << hour << ":";
+        min >= 0 && min <= 9 ? std::cout << "0" << min : std::cout << min;
+    }
+    else {
+        std::cout << hour << ":";
+        min >= 0 && min <= 9 ? std::cout << "0" << min : std::cout << min;
+    }
+}
+

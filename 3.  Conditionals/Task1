@@ -1,0 +1,17 @@
+// Conditionals1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter number to check: "; 
+
+    int a, x, b;
+    std::cin >> a >> x >> b;
+
+    bool isinbetween_a_and_b = x <= b && x >= a;
+
+    std::cout << "Answer: " << (isinbetween_a_and_b ? "true" : "false");
+}
+

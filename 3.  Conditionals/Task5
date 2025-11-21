@@ -1,0 +1,23 @@
+// Conditionals5.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter the coordinats: ";
+
+    double coordX, coordY;
+    std::cin >> coordX >> coordY;
+
+    if (coordX == 0 && coordY == 0)
+        std::cout << "At (0,0)" << std::endl;
+    else if (coordX == 0)
+        std::cout << "On Y" << std::endl;
+    else if (coordY == 0)
+        std::cout << "On X" << std::endl;
+    else
+        std::cout << ((coordX > 0) ? ((coordY > 0) ? "First" : "Fourth") : ((coordY > 0) ? "Second" : "Third"))
+        << std::endl;
+}
+

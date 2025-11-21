@@ -1,0 +1,36 @@
+// Loops3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter number: ";
+    long long num;
+    std::cin >> num;
+
+    std::cout << "Enter position: ";
+    int pos;
+    std::cin >> pos;
+
+    bool posReached = false;
+
+    while (num != 0 && pos > 0)
+    {
+        int digit = num % 10;
+        pos--;
+        if (pos==0) 
+        {
+            std::cout << digit; 
+            posReached = true; 
+            break;
+        }
+        else 
+        { 
+            (num /= 10);  
+            
+        }
+    }
+    if (!posReached)
+        std::cout << "Index not present";
+}

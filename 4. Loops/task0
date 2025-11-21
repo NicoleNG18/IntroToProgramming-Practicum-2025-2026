@@ -1,0 +1,22 @@
+// Loops1Paola.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+
+int main()
+{
+	std::cout << "Enter number: ";
+
+	int n;
+	std::cin >> n;
+
+	for (int i = 0; i <= n; i++)
+	{
+		for (int j = 0; j <= n; j++)
+		{
+			if (i > j) std::cout << '$';
+		}
+		std::cout << '\n';
+	}
+}
