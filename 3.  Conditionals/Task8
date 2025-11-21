@@ -1,0 +1,22 @@
+// Conditionals8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter two numbers: ";
+
+    int num1, num2;
+    std::cin >> num1 >> num2;
+
+    ((num1 <= 99) && (num1 >= 1) && (num2 <= 99) && (num2 >= 1));
+    
+    int newnum = num1 * 100 + num2;
+
+    if ((num1 / 10 < num1 % 10) && (num1 % 10 < num2 / 10) && (num2 / 10 < num2 % 10))
+        std::cout <<newnum << " - Yes";
+    else
+        std::cout <<newnum << " - NO";
+}
+
