@@ -1,0 +1,37 @@
+// Loops10.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+	std::cout << "Enter number: " << std::endl;
+
+	unsigned long num;
+	std::cin >> num;
+
+	int maxN = 0;
+	int maxDigit = 0;
+
+	for (int i = 9; i >= 0; i--)
+	{
+		unsigned copyNum = num;
+		unsigned Digit = 0;
+		while (copyNum > 0)
+		{
+			if (copyNum % 10 == i)
+			{
+				Digit++;
+			}
+			copyNum /= 10;
+		}
+
+		if (Digit > maxN)
+		{
+			maxN = Digit;
+			maxDigit = i;
+		}
+	}
+
+	std::cout << maxDigit;
+}
