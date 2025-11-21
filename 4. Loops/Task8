@@ -1,0 +1,23 @@
+// Loops9.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    std::cout << "Enter 2 numbers: ";
+
+    unsigned num1, num2;
+    std::cin >> num1 >> num2;
+
+    unsigned minNum = (num1 > num2) ? num1 : num2;
+
+    for (unsigned i = minNum; i >= 1; i--)
+    {
+        if (num1 % i == 0 && num2 % i == 0)
+        {
+            std::cout << i << std::endl;
+        }
+    }
+
+}
