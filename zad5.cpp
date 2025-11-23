@@ -1,24 +1,32 @@
-
-
 #include <iostream>
+using namespace std;
 
-bool onSameCircle(int a, int b, int c, int d) {
-    int rad1_squared = a * a + b * b;
-    int rad2_squared = c * c + d * d;
-
-    return rad1_squared == rad2_squared;
+long long revNumber(long long n) {
+	long long rev = 0;
+	while (n > 0) {
+		rev = rev * 10 + (n % 10);
+		n /= 10;
+	}
+	return rev;
 }
 
-int main() {
-    int a, b, c, d;
-    std::cout << "Enter coordinates of (a b): ";
-    std::cin >> a >> b;
-    std::cout << "Enter coordinates of (c d): ";
-    std::cin >> c >> d;
+long long revConcatenation(long long n) {
+	long long rev = revNumber(n);
+	long long temp = n;
+	long long pow = 1;
+	while (temp > 0) {
+		pow *= 10;
+		temp /= 10;
+	}
+	return rev * pow + n;
+}
 
-    if (onSameCircle(a, b, c, d))
-        std::cout << "yes" << std::endl;
-    else
-        std::cout << "no" << std::endl;
-    return 0;
+int main()
+{
+	long long n;
+	cout << "Enter number: " << endl;
+	cin >> n;
+	cout << revConcatenation(n) << endl;
+
+	return 0;
 }

@@ -1,48 +1,22 @@
-
-
 #include <iostream>
+using namespace std;
 
-int sortDescending(int n) {
-    int result = 0;
-
-    while (n > 0) {
-        int maxDigit = 0;
-        int temp = n;
-
-        while (temp > 0) {
-            int digit = temp % 10;
-            if (digit > maxDigit)
-                maxDigit = digit;
-            temp /= 10;
-        }
-
-        result = result * 10 + maxDigit;
-
-        int newNum = 0;
-        int multiplier = 1;
-        bool removed = false;
-
-        while (n > 0) {
-            int digit = n % 10;
-            n /= 10;
-            if (digit == maxDigit && !removed) {
-                removed = true;
-                continue;
-            }
-            newNum += digit * multiplier;
-            multiplier *= 10;
-        }
-        n = newNum;
-    }
-
-    return result;
+bool isPerfect(int n) {
+	int sum = 0;
+	for (int i = 1; i <= n / 2; i++) {
+		if (n % i == 0) {
+			sum += i;
+		}
+	}
+	return sum == n;
 }
 
-int main() {
-    int num;
-    std::cout << "Enter a natural number: ";
-    std::cin >> num;
-    std::cout << sortDescending(num) << std::endl;
+int main()
+{
+	int num;
+	cout << "Enter number: " << endl;
+	cin >> num;
+	cout << boolalpha << isPerfect(num) << endl;
 
-    return 0;
+	return 0;
 }

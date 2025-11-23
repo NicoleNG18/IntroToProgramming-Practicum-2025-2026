@@ -1,32 +1,33 @@
-
-
 #include <iostream>
+using namespace std;
 
-int reverseNumber(int n) {
-    int reversed = 0;
-    while (n > 0) {
-        int digit = n % 10;
-        reversed = reversed * 10 + digit;
-        n /= 10;
-    }
-    return reversed;
+bool isPalindrome(int n) {
+	int length = 0;
+	int temp = n;
+	while (temp > 0) {
+		length++;
+		temp >>= 1;
+	}
+	for (int i = 0; i < length / 2; i++) {
+		int rightBit = (n >> i) & 1;
+		int leftBit = (n >> (length - 1 - i)) & 1;
+		if (leftBit != rightBit) return false;
+	}
+	return true;
 }
 
-int main() {
-    int n;
+int main()
+{
+	int count = 0;
+	int num = 1;
 
-    do {
-        std::cout << "Enter a non-negative number: ";
-        std::cin >> n;
-
-        if (n < 0) {
-            std::cout << "Number must not be negative! Try again.\n";
-        }
-
-    } while (n < 0);
-
-    int reversed = reverseNumber(n);
-    std::cout << "Reversed number: " << reversed << std::endl;
-
-    return 0;
+	while (count < 20) {
+		if (isPalindrome(num)) {
+			cout << num << " ";
+			count++;
+		}
+		num++;
+	}
+	cout << endl;
+	return 0;
 }
